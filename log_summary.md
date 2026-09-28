@@ -6,6 +6,7 @@ Log Table:
 
 |PR|Created|Title|Author|Build|UT|Bench|Summary|
 |-|-|-|-|-|-|-|-|
-|[29506](https://github.com/ggml-org/llama.cpp/pull/29506)|2026-09-26T23:42:22Z|sycl: use ExternalProject to let this backend be built with SYCL compiler while everything else could use another|@a1batross|Pass|Fail (N/A -> N/A)|Fail (Max: 0.09%, Min: -0.65%)|[summary.md](29506/summary.md)|
-|[29507](https://github.com/ggml-org/llama.cpp/pull/29507)|2026-09-27T02:11:37Z|sycl: remove duplicate block-size defines from op headers|@Titaniumtown|Pass|Fail (N/A -> N/A)|Pass (Max: 0.02%, Min: -0.12%)|[summary.md](29507/summary.md)|
 |[29510](https://github.com/ggml-org/llama.cpp/pull/29510)|2026-09-27T04:10:17Z|llama + CUDA: flash_attn_ext_rows (fix unified kv for multi-seq)|@am17an|Pass|Fail (N/A -> N/A)|Fail (Max: -0.00%, Min: -0.33%)|[summary.md](29510/summary.md)|
+|[29507](https://github.com/ggml-org/llama.cpp/pull/29507)|2026-09-27T02:11:37Z|sycl: remove duplicate block-size defines from op headers|@Titaniumtown|Pass|Fail (N/A -> N/A)|Pass (Max: 0.02%, Min: -0.12%)|[summary.md](29507/summary.md)|
+|[29506](https://github.com/ggml-org/llama.cpp/pull/29506)|2026-09-26T23:42:22Z|sycl: use ExternalProject to let this backend be built with SYCL compiler while everything else could use another|@a1batross|Pass|Fail (N/A -> N/A)|Fail (Max: 0.09%, Min: -0.65%)|[summary.md](29506/summary.md)|
+|[29500](https://github.com/ggml-org/llama.cpp/pull/29500)|2026-09-26T21:50:03Z|sycl: add IQ3_S multi-column MMVQ|@clemenswasser|Pass|Fail (N/A -> N/A)|Pass (Max: 0.37%, Min: -0.29%)|[summary.md](29500/summary.md)|
