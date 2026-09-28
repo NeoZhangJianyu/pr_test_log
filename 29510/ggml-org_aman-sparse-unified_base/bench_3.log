@@ -1,0 +1,32 @@
+ 
+:: initializing oneAPI environment ...
+   bash: BASH_VERSION = 5.3.9(1)-release
+   args: Using "$@" for setvars.sh arguments: --force
+:: ccl -- latest
+:: compiler -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpl -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: tcm -- latest
+:: umf -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1338.81 ± 1.66 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       1279.54 ± 2.26 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |         pp16384 |      1193.55 ± 17.67 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         29.11 ± 0.40 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1302.93 ± 1.22 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1151.99 ± 0.66 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |         pp16384 |      1018.43 ± 10.09 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         26.97 ± 0.21 |
+
+build: 85ca3b52c (11208)

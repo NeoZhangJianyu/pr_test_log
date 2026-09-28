@@ -1,0 +1,32 @@
+ 
+:: initializing oneAPI environment ...
+   bash: BASH_VERSION = 5.3.9(1)-release
+   args: Using "$@" for setvars.sh arguments: --force
+:: ccl -- latest
+:: compiler -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpl -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: tcm -- latest
+:: umf -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5213.31 ± 24.56 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      5024.06 ± 16.64 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |         pp16384 |       4647.29 ± 4.68 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         59.49 ± 0.77 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5077.55 ± 41.50 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |      4762.31 ± 14.96 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |         pp16384 |       4280.45 ± 2.06 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         56.65 ± 1.95 |
+
+build: 7908e9e8c (11209)
