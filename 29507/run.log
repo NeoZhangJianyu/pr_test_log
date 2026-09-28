@@ -1,0 +1,3 @@
+Command: /home/jianyuzh/miniforge3/bin/python /hd1/jianyuzh/llama.cpp/auto_ci/sycl_test_pr.py https://github.com/Titaniumtown/llama.cpp/tree/pr/blockdup /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+
+Test command skipped by --skip-test.
