@@ -10,7 +10,7 @@
 - Primary: `clemenswasser_sycl-iq3s-multicol-mmvq`
 - Base: `clemenswasser_sycl-iq3s-multicol-mmvq_base`
 - Base checked out commit: `81bc6b83f827df746eb129235488d325c49cae52`
-- GGUF file: `Qwen3.5-0.8B-MTP-Q4_K_M.gguf`
+- GGUF files: `Qwen3.5-0.8B-MTP-Q4_K_M.gguf, Qwen3.5-0.8B-Q4_K_M.gguf, Qwen2-1.5Moe.Q4_K_M.gguf`
 - GPU: `13th Gen Intel(R) Core(TM) i7-13700K`
 
 ## UT Results
@@ -22,37 +22,103 @@
 
 ## Bench Throughput Comparison
 
-| Test | fa | Base t/s | Primary t/s | Increase Rate (Primary vs Base) |
-| --- | ---: | ---: | ---: | ---: |
-| pp512 | 0 | 6015.64 | 6009.65 | -0.10% |
-| pp512 | 1 | 6130.19 | 6121.95 | -0.13% |
-| tg128 | 0 | 160.29 | 160.88 | 0.37% |
-| tg128 | 1 | 162.47 | 162.00 | -0.29% |
+| GGUF | Test | fa | Base t/s | Primary t/s | Increase Rate (Primary vs Base) |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 0 | 6015.86 | 6006.08 | -0.16% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 1 | 6131.30 | 6130.87 | -0.01% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 0 | 160.52 | 160.77 | 0.16% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 1 | 161.57 | 162.19 | 0.38% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 0 | 6001.38 | 5997.03 | -0.07% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 1 | 6098.20 | 6103.81 | 0.09% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 0 | 158.72 | 159.62 | 0.57% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 1 | 159.08 | 160.77 | 1.06% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 0 | 1484.04 | 1484.16 | 0.01% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 1 | 1523.41 | 1524.37 | 0.06% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 0 | 56.82 | 56.90 | 0.14% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 1 | 58.93 | 58.93 | 0.00% |
 
 ## Bench Results
 
-### clemenswasser_sycl-iq3s-multicol-mmvq (bench.log)
+### Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq (bench_1.log)
 ```text
 | model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
 | ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
-| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      6121.95 ± 16.07 |
-| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |        162.00 ± 0.50 |
-| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      6009.65 ± 21.74 |
-| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |        160.88 ± 0.11 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      6130.87 ± 17.77 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |        162.19 ± 0.66 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      6006.08 ± 17.81 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |        160.77 ± 0.46 |
 
 build: a75e09f41 (11201)
 ```
 
-### clemenswasser_sycl-iq3s-multicol-mmvq_base (bench.log)
+#### clemenswasser_sycl-iq3s-multicol-mmvq_base (bench_1.log)
 ```text
 | model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
 | ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
-| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      6130.19 ± 11.91 |
-| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |        162.47 ± 0.68 |
-| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      6015.64 ± 19.25 |
-| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |        160.29 ± 0.25 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      6131.30 ± 18.09 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |        161.57 ± 0.22 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      6015.86 ± 20.25 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |        160.52 ± 0.07 |
 
 build: 81bc6b83f (11200)
 ```
 
-- Bench data comparison from bench.log: different
+- Bench data comparison: different
+
+### Qwen3.5-0.8B-Q4_K_M.gguf
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       6103.81 ± 8.54 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |        160.77 ± 0.04 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5997.03 ± 20.68 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |        159.62 ± 0.03 |
+
+build: a75e09f41 (11201)
+```
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq_base (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      6098.20 ± 11.92 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |        159.08 ± 0.17 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      6001.38 ± 15.61 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |        158.72 ± 0.59 |
+
+build: 81bc6b83f (11200)
+```
+
+- Bench data comparison: different
+
+### Qwen2-1.5Moe.Q4_K_M.gguf
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1524.37 ± 6.95 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         58.93 ± 0.08 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1484.16 ± 2.63 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         56.90 ± 0.07 |
+
+build: a75e09f41 (11201)
+```
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq_base (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1523.41 ± 6.35 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         58.93 ± 0.07 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1484.04 ± 1.31 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         56.82 ± 0.05 |
+
+build: 81bc6b83f (11200)
+```
+
+- Bench data comparison: different

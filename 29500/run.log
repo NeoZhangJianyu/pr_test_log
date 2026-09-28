@@ -1,10 +1,588 @@
-usage: sycl_test_pr.py [-h] [--ggufs GGUFS] [--dry-run] [--clone-only]
-                       [--summary-only] [--skip-clone] [--skip-build]
-                       [--skip-ut] [--env ENV] [--device DEVICE]
-                       [--skip-ops SKIP_OPS]
-                       source
-sycl_test_pr.py: error: unrecognized arguments: /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf /hd1/jianyuzh/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
-Command: /home/jianyuzh/miniforge3/bin/python /hd1/jianyuzh/llama.cpp/auto_ci/sycl_test_pr.py https://github.com/clemenswasser/llama.cpp/tree/sycl-iq3s-multicol-mmvq --ggufs /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf /hd1/jianyuzh/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
+Cloning into 'clemenswasser_sycl-iq3s-multicol-mmvq'...
+Cloning into 'clemenswasser_sycl-iq3s-multicol-mmvq_base'...
+Note: switching to '81bc6b83f827df746eb129235488d325c49cae52'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 81bc6b83f jinja : implement sameas test (#29448)
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 2 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+| 1| [level_zero:gpu:1]|                 Intel UHD Graphics 770|   12.2|     32|     512|   32| 62574M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+| 1| [level_zero:gpu:1]|      Y|
+oneapi::mkl::oneapi::mkl::blas::sgemm: invalid argument: Illegal value supplied for parameter lda
+Exception caught at file:/hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq/ggml/src/ggml-sycl/conv3d.cpp, line:217, func:operator()
+SYCL error: CHECK_TRY_ERROR(oneapi::mkl::blas::column_major::gemm( *stream, oneapi::mkl::transpose::trans, oneapi::mkl::transpose::nontrans, m, n_gemm, k, dpct::get_value(&alpha, *stream), (const float *) A_packed, lda, (const float *) B_packed, ldb, dpct::get_value(&beta, *stream), (float *) dst_mat.data, ldc)): Exception caught in this line of code.
+  in function ggml_sycl_op_conv_3d at /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq/ggml/src/ggml-sycl/conv3d.cpp:217
+/hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq/ggml/src/ggml-sycl/common.hpp:145: SYCL error
+warning: File "/opt/intel/oneapi/compiler/2026.1/lib/libsycl.so.9.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+WARNING: test-backend-ops failed in clemenswasser_sycl-iq3s-multicol-mmvq (exit code -6); continuing.
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 2 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+| 1| [level_zero:gpu:1]|                 Intel UHD Graphics 770|   12.2|     32|     512|   32| 62574M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+| 1| [level_zero:gpu:1]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 2 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+| 1| [level_zero:gpu:1]|                 Intel UHD Graphics 770|   12.2|     32|     512|   32| 62574M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+| 1| [level_zero:gpu:1]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 2 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+| 1| [level_zero:gpu:1]|                 Intel UHD Graphics 770|   12.2|     32|     512|   32| 62574M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+| 1| [level_zero:gpu:1]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 2 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+| 1| [level_zero:gpu:1]|                 Intel UHD Graphics 770|   12.2|     32|     512|   32| 62574M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+| 1| [level_zero:gpu:1]|      Y|
+oneapi::mkl::oneapi::mkl::blas::sgemm: invalid argument: Illegal value supplied for parameter lda
+Exception caught at file:/hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base/ggml/src/ggml-sycl/conv3d.cpp, line:217, func:operator()
+SYCL error: CHECK_TRY_ERROR(oneapi::mkl::blas::column_major::gemm( *stream, oneapi::mkl::transpose::trans, oneapi::mkl::transpose::nontrans, m, n_gemm, k, dpct::get_value(&alpha, *stream), (const float *) A_packed, lda, (const float *) B_packed, ldb, dpct::get_value(&beta, *stream), (float *) dst_mat.data, ldc)): Exception caught in this line of code.
+  in function ggml_sycl_op_conv_3d at /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base/ggml/src/ggml-sycl/conv3d.cpp:217
+/hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base/ggml/src/ggml-sycl/common.hpp:145: SYCL error
+warning: File "/opt/intel/oneapi/compiler/2026.1/lib/libsycl.so.9.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+WARNING: test-backend-ops failed in clemenswasser_sycl-iq3s-multicol-mmvq_base (exit code -6); continuing.
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 2 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+| 1| [level_zero:gpu:1]|                 Intel UHD Graphics 770|   12.2|     32|     512|   32| 62574M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+| 1| [level_zero:gpu:1]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 2 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+| 1| [level_zero:gpu:1]|                 Intel UHD Graphics 770|   12.2|     32|     512|   32| 62574M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+| 1| [level_zero:gpu:1]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 2 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+| 1| [level_zero:gpu:1]|                 Intel UHD Graphics 770|   12.2|     32|     512|   32| 62574M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+| 1| [level_zero:gpu:1]|      Y|
+Generated clone commands:
+git clone -b sycl-iq3s-multicol-mmvq https://github.com/clemenswasser/llama.cpp clemenswasser_sycl-iq3s-multicol-mmvq
+git clone -b sycl-iq3s-multicol-mmvq https://github.com/clemenswasser/llama.cpp clemenswasser_sycl-iq3s-multicol-mmvq_base
+workdir: /hd1/jianyuzh/llama.cpp/auto_ci/29500
+Resolved GGUF model path: /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+Resolved GGUF model path: /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf
+Resolved GGUF model path: /hd1/jianyuzh/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
+Removed existing output path: /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500 && git clone -b sycl-iq3s-multicol-mmvq https://github.com/clemenswasser/llama.cpp clemenswasser_sycl-iq3s-multicol-mmvq)
+Removed existing output path: /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500 && git clone -b sycl-iq3s-multicol-mmvq https://github.com/clemenswasser/llama.cpp clemenswasser_sycl-iq3s-multicol-mmvq_base)
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && git log)
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && git show -s '--format=%H	%an' HEAD)
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && git log '--format=%H	%an')
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && git checkout 81bc6b83f827df746eb129235488d325c49cae52)
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq && git log -n 1)
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq && bash -lc './examples/sycl/build.sh > /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq/build.log 2>&1')
+Saved build output to /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq/build.log
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && git log -n 1)
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && bash -lc './examples/sycl/build.sh > /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base/build.log 2>&1')
+Saved build output to /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base/build.log
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq && bash -lc 'source /opt/intel/oneapi/setvars.sh --force')
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0 --list-ops')
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0')
+Saved UT result to /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq/ut.log
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf -fa 1,0 --device SYCL0 -ngl -1')
+Saved benchmark result to /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq/bench_1.log
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf -fa 1,0 --device SYCL0 -ngl -1')
+Saved benchmark result to /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq/bench_2.log
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /hd1/jianyuzh/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf -fa 1,0 --device SYCL0 -ngl -1')
+Saved benchmark result to /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq/bench_3.log
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force')
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0 --list-ops')
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0')
+Saved UT result to /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base/ut.log
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf -fa 1,0 --device SYCL0 -ngl -1')
+Saved benchmark result to /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base/bench_1.log
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf -fa 1,0 --device SYCL0 -ngl -1')
+Saved benchmark result to /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base/bench_2.log
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /hd1/jianyuzh/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf -fa 1,0 --device SYCL0 -ngl -1')
+Saved benchmark result to /hd1/jianyuzh/llama.cpp/auto_ci/29500/clemenswasser_sycl-iq3s-multicol-mmvq_base/bench_3.log
+
+$ (cd /hd1/jianyuzh/llama.cpp/auto_ci/29500 && clinfo -l)
+
+# Summary
+# SYCL Workflow Summary
+
+## Target Info
+- Primary: `clemenswasser_sycl-iq3s-multicol-mmvq`
+- Base: `clemenswasser_sycl-iq3s-multicol-mmvq_base`
+- Base checked out commit: `81bc6b83f827df746eb129235488d325c49cae52`
+- GGUF files: `Qwen3.5-0.8B-MTP-Q4_K_M.gguf, Qwen3.5-0.8B-Q4_K_M.gguf, Qwen2-1.5Moe.Q4_K_M.gguf`
+- GPU: `13th Gen Intel(R) Core(TM) i7-13700K`
+
+## UT Results
+
+| Target | Passed | UT Cases | Pass Rate |
+| --- | ---: | ---: | ---: |
+| clemenswasser_sycl-iq3s-multicol-mmvq | N/A | N/A | N/A |
+| clemenswasser_sycl-iq3s-multicol-mmvq_base | N/A | N/A | N/A |
+
+## Bench Throughput Comparison
+
+| GGUF | Test | fa | Base t/s | Primary t/s | Increase Rate (Primary vs Base) |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 0 | 6015.86 | 6006.08 | -0.16% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 1 | 6131.30 | 6130.87 | -0.01% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 0 | 160.52 | 160.77 | 0.16% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 1 | 161.57 | 162.19 | 0.38% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 0 | 6001.38 | 5997.03 | -0.07% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 1 | 6098.20 | 6103.81 | 0.09% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 0 | 158.72 | 159.62 | 0.57% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 1 | 159.08 | 160.77 | 1.06% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 0 | 1484.04 | 1484.16 | 0.01% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 1 | 1523.41 | 1524.37 | 0.06% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 0 | 56.82 | 56.90 | 0.14% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 1 | 58.93 | 58.93 | 0.00% |
+
+## Bench Results
+
+### Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      6130.87 ± 17.77 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |        162.19 ± 0.66 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      6006.08 ± 17.81 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |        160.77 ± 0.46 |
+
+build: a75e09f41 (11201)
+```
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq_base (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      6131.30 ± 18.09 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |        161.57 ± 0.22 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      6015.86 ± 20.25 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |        160.52 ± 0.07 |
+
+build: 81bc6b83f (11200)
+```
+
+- Bench data comparison: different
+
+### Qwen3.5-0.8B-Q4_K_M.gguf
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       6103.81 ± 8.54 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |        160.77 ± 0.04 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5997.03 ± 20.68 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |        159.62 ± 0.03 |
+
+build: a75e09f41 (11201)
+```
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq_base (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      6098.20 ± 11.92 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |        159.08 ± 0.17 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      6001.38 ± 15.61 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |        158.72 ± 0.59 |
+
+build: 81bc6b83f (11200)
+```
+
+- Bench data comparison: different
+
+### Qwen2-1.5Moe.Q4_K_M.gguf
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1524.37 ± 6.95 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         58.93 ± 0.08 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1484.16 ± 2.63 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         56.90 ± 0.07 |
+
+build: a75e09f41 (11201)
+```
+
+#### clemenswasser_sycl-iq3s-multicol-mmvq_base (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1523.41 ± 6.35 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         58.93 ± 0.07 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1484.04 ± 1.31 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         56.82 ± 0.05 |
+
+build: 81bc6b83f (11200)
+```
+
+- Bench data comparison: different
+Saved summary to /hd1/jianyuzh/llama.cpp/auto_ci/29500/summary.md
+
+Workflow completed successfully.
+Command: /home/jianyuzh/miniforge3/bin/python /hd1/jianyuzh/llama.cpp/auto_ci/sycl_test_pr.py https://github.com/clemenswasser/llama.cpp/tree/sycl-iq3s-multicol-mmvq --ggufs /hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf,/hd1/jianyuzh/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf,/hd1/jianyuzh/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
 
 
-Exit code: 2
+Exit code: 0
