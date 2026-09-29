@@ -1,0 +1,617 @@
+Cloning into 'stolk_sycl-comm-direct-alloc'...
+Cloning into 'stolk_sycl-comm-direct-alloc_base'...
+Updating files:  57% (2098/3624)
+Updating files:  58% (2102/3624)
+Updating files:  59% (2139/3624)
+Updating files:  60% (2175/3624)
+Updating files:  61% (2211/3624)
+Updating files:  62% (2247/3624)
+Updating files:  63% (2284/3624)
+Updating files:  64% (2320/3624)
+Updating files:  65% (2356/3624)
+Updating files:  66% (2392/3624)
+Updating files:  67% (2429/3624)
+Updating files:  68% (2465/3624)
+Updating files:  69% (2501/3624)
+Updating files:  70% (2537/3624)
+Updating files:  71% (2574/3624)
+Updating files:  72% (2610/3624)
+Updating files:  73% (2646/3624)
+Updating files:  74% (2682/3624)
+Updating files:  75% (2718/3624)
+Updating files:  76% (2755/3624)
+Updating files:  77% (2791/3624)
+Updating files:  78% (2827/3624)
+Updating files:  79% (2863/3624)
+Updating files:  80% (2900/3624)
+Updating files:  81% (2936/3624)
+Updating files:  82% (2972/3624)
+Updating files:  83% (3008/3624)
+Updating files:  84% (3045/3624)
+Updating files:  85% (3081/3624)
+Updating files:  86% (3117/3624)
+Updating files:  87% (3153/3624)
+Updating files:  88% (3190/3624)
+Updating files:  89% (3226/3624)
+Updating files:  90% (3262/3624)
+Updating files:  91% (3298/3624)
+Updating files:  92% (3335/3624)
+Updating files:  93% (3371/3624)
+Updating files:  94% (3407/3624)
+Updating files:  95% (3443/3624)
+Updating files:  96% (3480/3624)
+Updating files:  97% (3516/3624)
+Updating files:  98% (3552/3624)
+Updating files:  99% (3588/3624)
+Updating files: 100% (3624/3624)
+Updating files: 100% (3624/3624), done.
+Note: switching to '1ab7e5ad2d4e7295c94c3b966a3e0b70fa365865'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 1ab7e5ad2 CUDA: fuse RMS_NORM + SCALE into one kernel (#29393)
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_COMM_DIRECT_ALLOC: 0
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+oneapi::mkl::oneapi::mkl::blas::sgemm: invalid argument: Illegal value supplied for parameter lda
+Exception caught at file:/home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc/ggml/src/ggml-sycl/conv3d.cpp, line:217, func:operator()
+SYCL error: CHECK_TRY_ERROR(oneapi::mkl::blas::column_major::gemm( *stream, oneapi::mkl::transpose::trans, oneapi::mkl::transpose::nontrans, m, n_gemm, k, dpct::get_value(&alpha, *stream), (const float *) A_packed, lda, (const float *) B_packed, ldb, dpct::get_value(&beta, *stream), (float *) dst_mat.data, ldc)): Exception caught in this line of code.
+  in function ggml_sycl_op_conv_3d at /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc/ggml/src/ggml-sycl/conv3d.cpp:217
+/home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc/ggml/src/ggml-sycl/common.hpp:145: SYCL error
+⚠️ warning: File "/opt/intel/oneapi/compiler/2026.1/lib/libsycl.so.9.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+⚠️ warning: 56	../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S: No such file or directory
+⚠️ warning: 49	./nptl/cancellation.c: No such file or directory
+⚠️ warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+WARNING: test-backend-ops failed in stolk_sycl-comm-direct-alloc (exit code -6); continuing.
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_COMM_DIRECT_ALLOC: 0
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_COMM_DIRECT_ALLOC: 0
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_COMM_DIRECT_ALLOC: 0
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+oneapi::mkl::oneapi::mkl::blas::sgemm: invalid argument: Illegal value supplied for parameter lda
+Exception caught at file:/home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base/ggml/src/ggml-sycl/conv3d.cpp, line:217, func:operator()
+SYCL error: CHECK_TRY_ERROR(oneapi::mkl::blas::column_major::gemm( *stream, oneapi::mkl::transpose::trans, oneapi::mkl::transpose::nontrans, m, n_gemm, k, dpct::get_value(&alpha, *stream), (const float *) A_packed, lda, (const float *) B_packed, ldb, dpct::get_value(&beta, *stream), (float *) dst_mat.data, ldc)): Exception caught in this line of code.
+  in function ggml_sycl_op_conv_3d at /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base/ggml/src/ggml-sycl/conv3d.cpp:217
+/home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base/ggml/src/ggml-sycl/common.hpp:145: SYCL error
+⚠️ warning: File "/opt/intel/oneapi/compiler/2026.1/lib/libsycl.so.9.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+⚠️ warning: 56	../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S: No such file or directory
+⚠️ warning: 49	./nptl/cancellation.c: No such file or directory
+⚠️ warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+WARNING: test-backend-ops failed in stolk_sycl-comm-direct-alloc_base (exit code -6); continuing.
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Generated clone commands:
+git clone -b sycl-comm-direct-alloc https://github.com/stolk/llama.cpp stolk_sycl-comm-direct-alloc
+git clone -b sycl-comm-direct-alloc https://github.com/stolk/llama.cpp stolk_sycl-comm-direct-alloc_base
+workdir: /home/jianyuzh/ws/llama.cpp/auto_ci/29459
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459 && git clone -b sycl-comm-direct-alloc https://github.com/stolk/llama.cpp stolk_sycl-comm-direct-alloc)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459 && git clone -b sycl-comm-direct-alloc https://github.com/stolk/llama.cpp stolk_sycl-comm-direct-alloc_base)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && git log)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && git show -s '--format=%H	%an' HEAD)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && git log '--format=%H	%an')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && git checkout 1ab7e5ad2d4e7295c94c3b966a3e0b70fa365865)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc && git log -n 1)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc && bash -lc './examples/sycl/build.sh > /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc/build.log 2>&1')
+Saved build output to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc/build.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && git log -n 1)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && bash -lc './examples/sycl/build.sh > /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base/build.log 2>&1')
+Saved build output to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base/build.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc && bash -lc 'source /opt/intel/oneapi/setvars.sh --force')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0 --list-ops')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0')
+Saved UT result to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc/ut.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc/bench_1.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc/bench_2.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc/bench_3.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0 --list-ops')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0')
+Saved UT result to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base/ut.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base/bench_1.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base/bench_2.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/stolk_sycl-comm-direct-alloc_base/bench_3.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29459 && clinfo -l)
+
+# Summary
+# SYCL Workflow Summary
+
+## Target Info
+- Primary: `stolk_sycl-comm-direct-alloc`
+- Base: `stolk_sycl-comm-direct-alloc_base`
+- Base checked out commit: `1ab7e5ad2d4e7295c94c3b966a3e0b70fa365865`
+- GGUF files: `Qwen3.5-0.8B-MTP-Q4_K_M.gguf, Qwen3.5-0.8B-Q4_K_M.gguf, Qwen2-1.5Moe.Q4_K_M.gguf`
+- GPU: `Intel(R) Arc(TM) A770 Graphics`
+
+## UT Results
+
+| Target | Passed | UT Cases | Pass Rate |
+| --- | ---: | ---: | ---: |
+| stolk_sycl-comm-direct-alloc | N/A | N/A | N/A |
+| stolk_sycl-comm-direct-alloc_base | N/A | N/A | N/A |
+
+## Bench Throughput Comparison
+
+| GGUF | Test | fa | Base t/s | Primary t/s | Increase Rate (Primary vs Base) |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 0 | 5085.22 | 4718.87 | -7.20% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 1 | 5225.66 | 5224.12 | -0.03% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp8192 | 0 | 4781.90 | 4489.34 | -6.12% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp8192 | 1 | 5036.66 | 5024.14 | -0.25% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 0 | 58.90 | 26.50 | -55.01% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 1 | 59.99 | 30.60 | -48.99% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 0 | 5041.15 | 4879.26 | -3.21% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 1 | 5181.08 | 4822.04 | -6.93% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp8192 | 0 | 4561.84 | 4600.98 | 0.86% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp8192 | 1 | 4991.18 | 4720.57 | -5.42% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 0 | 26.77 | 51.46 | 92.23% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 1 | 57.53 | 50.45 | -12.31% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 0 | 1262.28 | 1307.74 | 3.60% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 1 | 1259.49 | 1336.92 | 6.15% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp8192 | 0 | 1160.90 | 1160.94 | 0.00% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp8192 | 1 | 1198.57 | 1282.63 | 7.01% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 0 | 27.23 | 27.12 | -0.40% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 1 | 19.23 | 29.41 | 52.94% |
+
+## Bench Results
+
+### Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+
+#### stolk_sycl-comm-direct-alloc (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5224.12 ± 19.03 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      5024.14 ± 19.95 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         30.60 ± 0.75 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      4718.87 ± 28.13 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |      4489.34 ± 30.22 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         26.50 ± 1.48 |
+
+build: 1eadf9f6c (11178)
+```
+
+#### stolk_sycl-comm-direct-alloc_base (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5225.66 ± 17.65 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      5036.66 ± 20.98 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         59.99 ± 0.09 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5085.22 ± 32.12 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4781.90 ± 1.27 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         58.90 ± 0.05 |
+
+build: 1ab7e5ad2 (11177)
+```
+
+- Bench data comparison: different
+
+### Qwen3.5-0.8B-Q4_K_M.gguf
+
+#### stolk_sycl-comm-direct-alloc (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       4822.04 ± 6.32 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      4720.57 ± 25.53 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         50.45 ± 1.50 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      4879.26 ± 51.05 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |      4600.98 ± 15.53 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         51.46 ± 1.08 |
+
+build: 1eadf9f6c (11178)
+```
+
+#### stolk_sycl-comm-direct-alloc_base (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5181.08 ± 16.38 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       4991.18 ± 5.44 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         57.53 ± 0.03 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5041.15 ± 26.57 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |      4561.84 ± 10.01 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         26.77 ± 1.45 |
+
+build: 1ab7e5ad2 (11177)
+```
+
+- Bench data comparison: different
+
+### Qwen2-1.5Moe.Q4_K_M.gguf
+
+#### stolk_sycl-comm-direct-alloc (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1336.92 ± 1.22 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       1282.63 ± 3.04 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         29.41 ± 0.02 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1307.74 ± 6.93 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1160.94 ± 3.04 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         27.12 ± 0.01 |
+
+build: 1eadf9f6c (11178)
+```
+
+#### stolk_sycl-comm-direct-alloc_base (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      1259.49 ± 14.15 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      1198.57 ± 10.21 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         19.23 ± 0.69 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1262.28 ± 4.48 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1160.90 ± 2.30 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         27.23 ± 0.02 |
+
+build: 1ab7e5ad2 (11177)
+```
+
+- Bench data comparison: different
+Saved summary to /home/jianyuzh/ws/llama.cpp/auto_ci/29459/summary.md
+
+Workflow completed successfully.
+Command: /home/jianyuzh/miniforge3/bin/python /home/jianyuzh/ws/llama.cpp/auto_ci/sycl_test_pr.py https://github.com/stolk/llama.cpp/tree/sycl-comm-direct-alloc /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf,/home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf,/home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
+
+
+Exit code: 0
