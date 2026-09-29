@@ -1,0 +1,592 @@
+Cloning into 'Captain-Tripps_sycl-tp-allreduce-pinned'...
+Cloning into 'Captain-Tripps_sycl-tp-allreduce-pinned_base'...
+Note: switching to '6c7a87f7e5e5cd75b8a641c3471f2dee84a6ed17'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 6c7a87f7e common : fix HF cache paths on Windows (#29475)
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+oneapi::mkl::oneapi::mkl::blas::sgemm: invalid argument: Illegal value supplied for parameter lda
+Exception caught at file:/home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned/ggml/src/ggml-sycl/conv3d.cpp, line:217, func:operator()
+SYCL error: CHECK_TRY_ERROR(oneapi::mkl::blas::column_major::gemm( *stream, oneapi::mkl::transpose::trans, oneapi::mkl::transpose::nontrans, m, n_gemm, k, dpct::get_value(&alpha, *stream), (const float *) A_packed, lda, (const float *) B_packed, ldb, dpct::get_value(&beta, *stream), (float *) dst_mat.data, ldc)): Exception caught in this line of code.
+  in function ggml_sycl_op_conv_3d at /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned/ggml/src/ggml-sycl/conv3d.cpp:217
+/home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned/ggml/src/ggml-sycl/common.hpp:145: SYCL error
+⚠️ warning: File "/opt/intel/oneapi/compiler/2026.1/lib/libsycl.so.9.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+⚠️ warning: 56	../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S: No such file or directory
+⚠️ warning: 49	./nptl/cancellation.c: No such file or directory
+⚠️ warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+WARNING: test-backend-ops failed in Captain-Tripps_sycl-tp-allreduce-pinned (exit code -6); continuing.
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+oneapi::mkl::oneapi::mkl::blas::sgemm: invalid argument: Illegal value supplied for parameter lda
+Exception caught at file:/home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base/ggml/src/ggml-sycl/conv3d.cpp, line:217, func:operator()
+SYCL error: CHECK_TRY_ERROR(oneapi::mkl::blas::column_major::gemm( *stream, oneapi::mkl::transpose::trans, oneapi::mkl::transpose::nontrans, m, n_gemm, k, dpct::get_value(&alpha, *stream), (const float *) A_packed, lda, (const float *) B_packed, ldb, dpct::get_value(&beta, *stream), (float *) dst_mat.data, ldc)): Exception caught in this line of code.
+  in function ggml_sycl_op_conv_3d at /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base/ggml/src/ggml-sycl/conv3d.cpp:217
+/home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base/ggml/src/ggml-sycl/common.hpp:145: SYCL error
+⚠️ warning: File "/opt/intel/oneapi/compiler/2026.1/lib/libsycl.so.9.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+⚠️ warning: 56	../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S: No such file or directory
+⚠️ warning: 49	./nptl/cancellation.c: No such file or directory
+⚠️ warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+WARNING: test-backend-ops failed in Captain-Tripps_sycl-tp-allreduce-pinned_base (exit code -6); continuing.
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Generated clone commands:
+git clone -b sycl-tp-allreduce-pinned https://github.com/Captain-Tripps/llama.cpp Captain-Tripps_sycl-tp-allreduce-pinned
+git clone -b sycl-tp-allreduce-pinned https://github.com/Captain-Tripps/llama.cpp Captain-Tripps_sycl-tp-allreduce-pinned_base
+workdir: /home/jianyuzh/ws/llama.cpp/auto_ci/29604
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604 && git clone -b sycl-tp-allreduce-pinned https://github.com/Captain-Tripps/llama.cpp Captain-Tripps_sycl-tp-allreduce-pinned)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604 && git clone -b sycl-tp-allreduce-pinned https://github.com/Captain-Tripps/llama.cpp Captain-Tripps_sycl-tp-allreduce-pinned_base)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && git log)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && git show -s '--format=%H	%an' HEAD)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && git log '--format=%H	%an')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && git checkout 6c7a87f7e5e5cd75b8a641c3471f2dee84a6ed17)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned && git log -n 1)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned && bash -lc './examples/sycl/build.sh > /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned/build.log 2>&1')
+Saved build output to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned/build.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && git log -n 1)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && bash -lc './examples/sycl/build.sh > /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base/build.log 2>&1')
+Saved build output to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base/build.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned && bash -lc 'source /opt/intel/oneapi/setvars.sh --force')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0 --list-ops')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0')
+Saved UT result to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned/ut.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned/bench_1.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned/bench_2.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned/bench_3.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0 --list-ops')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0')
+Saved UT result to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base/ut.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base/bench_1.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base/bench_2.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/Captain-Tripps_sycl-tp-allreduce-pinned_base/bench_3.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29604 && clinfo -l)
+
+# Summary
+# SYCL Workflow Summary
+
+## Target Info
+- Primary: `Captain-Tripps_sycl-tp-allreduce-pinned`
+- Base: `Captain-Tripps_sycl-tp-allreduce-pinned_base`
+- Base checked out commit: `6c7a87f7e5e5cd75b8a641c3471f2dee84a6ed17`
+- GGUF files: `Qwen3.5-0.8B-MTP-Q4_K_M.gguf, Qwen3.5-0.8B-Q4_K_M.gguf, Qwen2-1.5Moe.Q4_K_M.gguf`
+- GPU: `Intel(R) Arc(TM) A770 Graphics`
+
+## UT Results
+
+| Target | Passed | UT Cases | Pass Rate |
+| --- | ---: | ---: | ---: |
+| Captain-Tripps_sycl-tp-allreduce-pinned | N/A | N/A | N/A |
+| Captain-Tripps_sycl-tp-allreduce-pinned_base | N/A | N/A | N/A |
+
+## Bench Throughput Comparison
+
+| GGUF | Test | fa | Base t/s | Primary t/s | Increase Rate (Primary vs Base) |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 0 | 5071.83 | 5089.37 | 0.35% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 1 | 5221.30 | 5225.78 | 0.09% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp8192 | 0 | 4777.67 | 4775.05 | -0.05% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp8192 | 1 | 5024.21 | 5026.58 | 0.05% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 0 | 58.65 | 54.41 | -7.23% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 1 | 58.10 | 57.97 | -0.22% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 0 | 5029.74 | 5048.45 | 0.37% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 1 | 5177.23 | 5184.04 | 0.13% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp8192 | 0 | 4739.93 | 4749.73 | 0.21% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp8192 | 1 | 4982.42 | 4987.01 | 0.09% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 0 | 54.11 | 54.27 | 0.30% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 1 | 55.90 | 57.74 | 3.29% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 0 | 1301.07 | 1319.57 | 1.42% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 1 | 1348.20 | 1346.50 | -0.13% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp8192 | 0 | 1155.38 | 1153.36 | -0.17% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp8192 | 1 | 1283.71 | 1286.94 | 0.25% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 0 | 27.23 | 26.88 | -1.29% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 1 | 29.54 | 29.47 | -0.24% |
+
+## Bench Results
+
+### Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+
+#### Captain-Tripps_sycl-tp-allreduce-pinned (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5225.78 ± 15.96 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      5026.58 ± 17.14 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         57.97 ± 0.04 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5089.37 ± 41.05 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4775.05 ± 2.27 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         54.41 ± 0.77 |
+
+build: 35039c153 (11236)
+```
+
+#### Captain-Tripps_sycl-tp-allreduce-pinned_base (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5221.30 ± 19.48 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      5024.21 ± 16.10 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         58.10 ± 0.09 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5071.83 ± 28.99 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4777.67 ± 3.93 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         58.65 ± 0.03 |
+
+build: 6c7a87f7e (11235)
+```
+
+- Bench data comparison: different
+
+### Qwen3.5-0.8B-Q4_K_M.gguf
+
+#### Captain-Tripps_sycl-tp-allreduce-pinned (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5184.04 ± 19.47 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      4987.01 ± 16.00 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         57.74 ± 0.05 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5048.45 ± 31.37 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4749.73 ± 1.00 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         54.27 ± 0.02 |
+
+build: 35039c153 (11236)
+```
+
+#### Captain-Tripps_sycl-tp-allreduce-pinned_base (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5177.23 ± 19.20 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       4982.42 ± 5.22 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         55.90 ± 0.07 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5029.74 ± 33.48 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4739.93 ± 1.39 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         54.11 ± 0.05 |
+
+build: 6c7a87f7e (11235)
+```
+
+- Bench data comparison: different
+
+### Qwen2-1.5Moe.Q4_K_M.gguf
+
+#### Captain-Tripps_sycl-tp-allreduce-pinned (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1346.50 ± 5.64 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       1286.94 ± 2.86 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         29.47 ± 0.10 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1319.57 ± 4.02 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1153.36 ± 1.57 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         26.88 ± 0.01 |
+
+build: 35039c153 (11236)
+```
+
+#### Captain-Tripps_sycl-tp-allreduce-pinned_base (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1348.20 ± 4.33 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       1283.71 ± 3.10 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         29.54 ± 0.01 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1301.07 ± 3.02 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1155.38 ± 0.52 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         27.23 ± 0.02 |
+
+build: 6c7a87f7e (11235)
+```
+
+- Bench data comparison: different
+Saved summary to /home/jianyuzh/ws/llama.cpp/auto_ci/29604/summary.md
+
+Workflow completed successfully.
+Command: /home/jianyuzh/miniforge3/bin/python /home/jianyuzh/ws/llama.cpp/auto_ci/sycl_test_pr.py https://github.com/Captain-Tripps/llama.cpp/tree/sycl-tp-allreduce-pinned /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf,/home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf,/home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
+
+
+Exit code: 0
