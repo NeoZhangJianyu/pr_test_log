@@ -1,0 +1,142 @@
+# SYCL Workflow Summary
+
+## PR Info
+
+| PR Number | Title | Created | Author |
+| ---: | --- | --- | --- |
+| [29338](https://github.com/ggml-org/llama.cpp/pull/29338) | sycl: guard DMMV reads at row tails | 2026-09-23T18:02:23Z | @newjordan |
+
+## Target Info
+- Primary: `newjordan_sycl-dmmv-tail-ready-20260923`
+- Base: `newjordan_sycl-dmmv-tail-ready-20260923_base`
+- Base checked out commit: `95887577ab5fead779581a7030a83c7752ff3234`
+- GGUF files: `Qwen3.5-0.8B-MTP-Q4_K_M.gguf, Qwen3.5-0.8B-Q4_K_M.gguf, Qwen2-1.5Moe.Q4_K_M.gguf`
+- GPU: `Intel(R) Arc(TM) A770 Graphics`
+
+## UT Results
+
+| Target | Passed | UT Cases | Pass Rate |
+| --- | ---: | ---: | ---: |
+| newjordan_sycl-dmmv-tail-ready-20260923 | N/A | N/A | N/A |
+| newjordan_sycl-dmmv-tail-ready-20260923_base | N/A | N/A | N/A |
+
+## Bench Throughput Comparison
+
+| GGUF | Test | fa | Base t/s | Primary t/s | Increase Rate (Primary vs Base) |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 0 | 5057.23 | 5098.64 | 0.82% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 1 | 5232.50 | 5221.66 | -0.21% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp8192 | 0 | 4759.51 | 4761.28 | 0.04% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp8192 | 1 | 5033.62 | 5019.95 | -0.27% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 0 | 57.78 | 54.97 | -4.86% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 1 | 59.75 | 59.78 | 0.05% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 0 | 5063.39 | 5027.68 | -0.71% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 1 | 5184.66 | 5190.41 | 0.11% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp8192 | 0 | 4736.32 | 4732.38 | -0.08% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp8192 | 1 | 4980.84 | 4977.69 | -0.06% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 0 | 56.66 | 54.54 | -3.74% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 1 | 56.08 | 56.24 | 0.29% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 0 | 1307.61 | 1301.67 | -0.45% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 1 | 1334.95 | 1348.52 | 1.02% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp8192 | 0 | 1153.09 | 1152.17 | -0.08% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp8192 | 1 | 1281.47 | 1283.86 | 0.19% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 0 | 27.05 | 27.15 | 0.37% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 1 | 29.39 | 29.63 | 0.82% |
+
+## Bench Results
+
+### Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+
+#### newjordan_sycl-dmmv-tail-ready-20260923 (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5221.66 ± 24.30 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      5019.95 ± 21.74 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         59.78 ± 0.06 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5098.64 ± 31.31 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4761.28 ± 3.50 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         54.97 ± 0.06 |
+
+build: a538fe4e2 (11206)
+```
+
+#### newjordan_sycl-dmmv-tail-ready-20260923_base (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5232.50 ± 12.78 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       5033.62 ± 4.47 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         59.75 ± 0.10 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5057.23 ± 95.60 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4759.51 ± 2.34 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         57.78 ± 1.59 |
+
+build: 95887577a (11205)
+```
+
+- Bench data comparison: different
+
+### Qwen3.5-0.8B-Q4_K_M.gguf
+
+#### newjordan_sycl-dmmv-tail-ready-20260923 (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5190.41 ± 17.26 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      4977.69 ± 13.78 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         56.24 ± 0.07 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5027.68 ± 72.50 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4732.38 ± 1.48 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         54.54 ± 0.06 |
+
+build: a538fe4e2 (11206)
+```
+
+#### newjordan_sycl-dmmv-tail-ready-20260923_base (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5184.66 ± 14.04 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       4980.84 ± 4.37 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         56.08 ± 0.05 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5063.39 ± 28.70 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4736.32 ± 0.92 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         56.66 ± 0.13 |
+
+build: 95887577a (11205)
+```
+
+- Bench data comparison: different
+
+### Qwen2-1.5Moe.Q4_K_M.gguf
+
+#### newjordan_sycl-dmmv-tail-ready-20260923 (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1348.52 ± 3.99 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       1283.86 ± 4.06 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         29.63 ± 0.00 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1301.67 ± 2.31 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1152.17 ± 1.02 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         27.15 ± 0.16 |
+
+build: a538fe4e2 (11206)
+```
+
+#### newjordan_sycl-dmmv-tail-ready-20260923_base (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1334.95 ± 4.03 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       1281.47 ± 2.83 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         29.39 ± 0.01 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1307.61 ± 2.35 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1153.09 ± 1.30 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         27.05 ± 0.22 |
+
+build: 95887577a (11205)
+```
+
+- Bench data comparison: different
