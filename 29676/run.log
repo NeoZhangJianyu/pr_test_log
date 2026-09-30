@@ -1,0 +1,592 @@
+Cloning into 'PrismML-Eng_ptq1_0-cuda'...
+Cloning into 'PrismML-Eng_ptq1_0-cuda_base'...
+Note: switching to 'c85b92c69c955961621193cd51da194f3cbcedf3'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at c85b92c69 tests : adjust server string regex to also match m2 utlra results (#29648)
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+oneapi::mkl::oneapi::mkl::blas::sgemm: invalid argument: Illegal value supplied for parameter lda
+Exception caught at file:/home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda/ggml/src/ggml-sycl/conv3d.cpp, line:217, func:operator()
+SYCL error: CHECK_TRY_ERROR(oneapi::mkl::blas::column_major::gemm( *stream, oneapi::mkl::transpose::trans, oneapi::mkl::transpose::nontrans, m, n_gemm, k, dpct::get_value(&alpha, *stream), (const float *) A_packed, lda, (const float *) B_packed, ldb, dpct::get_value(&beta, *stream), (float *) dst_mat.data, ldc)): Exception caught in this line of code.
+  in function ggml_sycl_op_conv_3d at /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda/ggml/src/ggml-sycl/conv3d.cpp:217
+/home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda/ggml/src/ggml-sycl/common.hpp:145: SYCL error
+⚠️ warning: File "/opt/intel/oneapi/compiler/2026.1/lib/libsycl.so.9.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+⚠️ warning: 56	../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S: No such file or directory
+⚠️ warning: 49	./nptl/cancellation.c: No such file or directory
+⚠️ warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+WARNING: test-backend-ops failed in PrismML-Eng_ptq1_0-cuda (exit code -6); continuing.
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+oneapi::mkl::oneapi::mkl::blas::sgemm: invalid argument: Illegal value supplied for parameter lda
+Exception caught at file:/home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base/ggml/src/ggml-sycl/conv3d.cpp, line:217, func:operator()
+SYCL error: CHECK_TRY_ERROR(oneapi::mkl::blas::column_major::gemm( *stream, oneapi::mkl::transpose::trans, oneapi::mkl::transpose::nontrans, m, n_gemm, k, dpct::get_value(&alpha, *stream), (const float *) A_packed, lda, (const float *) B_packed, ldb, dpct::get_value(&beta, *stream), (float *) dst_mat.data, ldc)): Exception caught in this line of code.
+  in function ggml_sycl_op_conv_3d at /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base/ggml/src/ggml-sycl/conv3d.cpp:217
+/home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base/ggml/src/ggml-sycl/common.hpp:145: SYCL error
+⚠️ warning: File "/opt/intel/oneapi/compiler/2026.1/lib/libsycl.so.9.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+⚠️ warning: 56	../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S: No such file or directory
+⚠️ warning: 49	./nptl/cancellation.c: No such file or directory
+⚠️ warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+WARNING: test-backend-ops failed in PrismML-Eng_ptq1_0-cuda_base (exit code -6); continuing.
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+  GGML_SYCL_SPARSE_FA: 0
+  GGML_SYCL_SPARSE_FA_DEBUG: 0
+  GGML_SYCL_SPARSE_FA_MARGIN: 256
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Generated clone commands:
+git clone -b ptq1_0-cuda https://github.com/PrismML-Eng/llama.cpp PrismML-Eng_ptq1_0-cuda
+git clone -b ptq1_0-cuda https://github.com/PrismML-Eng/llama.cpp PrismML-Eng_ptq1_0-cuda_base
+workdir: /home/jianyuzh/ws/llama.cpp/auto_ci/29676
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676 && git clone -b ptq1_0-cuda https://github.com/PrismML-Eng/llama.cpp PrismML-Eng_ptq1_0-cuda)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676 && git clone -b ptq1_0-cuda https://github.com/PrismML-Eng/llama.cpp PrismML-Eng_ptq1_0-cuda_base)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && git log)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && git show -s '--format=%H	%an' HEAD)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && git log '--format=%H	%an')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && git checkout c85b92c69c955961621193cd51da194f3cbcedf3)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda && git log -n 1)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda && bash -lc './examples/sycl/build.sh > /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda/build.log 2>&1')
+Saved build output to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda/build.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && git log -n 1)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && bash -lc './examples/sycl/build.sh > /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base/build.log 2>&1')
+Saved build output to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base/build.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda && bash -lc 'source /opt/intel/oneapi/setvars.sh --force')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0 --list-ops')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0')
+Saved UT result to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda/ut.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda/bench_1.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda/bench_2.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda/bench_3.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0 --list-ops')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0')
+Saved UT result to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base/ut.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base/bench_1.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base/bench_2.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/PrismML-Eng_ptq1_0-cuda_base/bench_3.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29676 && clinfo -l)
+
+# Summary
+# SYCL Workflow Summary
+
+## Target Info
+- Primary: `PrismML-Eng_ptq1_0-cuda`
+- Base: `PrismML-Eng_ptq1_0-cuda_base`
+- Base checked out commit: `c85b92c69c955961621193cd51da194f3cbcedf3`
+- GGUF files: `Qwen3.5-0.8B-MTP-Q4_K_M.gguf, Qwen3.5-0.8B-Q4_K_M.gguf, Qwen2-1.5Moe.Q4_K_M.gguf`
+- GPU: `Intel(R) Arc(TM) A770 Graphics`
+
+## UT Results
+
+| Target | Passed | UT Cases | Pass Rate |
+| --- | ---: | ---: | ---: |
+| PrismML-Eng_ptq1_0-cuda | N/A | N/A | N/A |
+| PrismML-Eng_ptq1_0-cuda_base | N/A | N/A | N/A |
+
+## Bench Throughput Comparison
+
+| GGUF | Test | fa | Base t/s | Primary t/s | Increase Rate (Primary vs Base) |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 0 | 5067.29 | 5105.22 | 0.75% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 1 | 5229.68 | 5221.78 | -0.15% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp8192 | 0 | 4762.54 | 4773.44 | 0.23% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp8192 | 1 | 5030.81 | 5022.22 | -0.17% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 0 | 58.51 | 55.32 | -5.45% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 1 | 59.82 | 59.79 | -0.05% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 0 | 5053.29 | 5058.84 | 0.11% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 1 | 5183.24 | 5179.41 | -0.07% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp8192 | 0 | 4734.92 | 4746.88 | 0.25% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp8192 | 1 | 4985.92 | 4982.93 | -0.06% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 0 | 54.31 | 56.79 | 4.57% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 1 | 57.66 | 57.67 | 0.02% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 0 | 1299.49 | 1323.80 | 1.87% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 1 | 1337.75 | 1337.40 | -0.03% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp8192 | 0 | 1154.56 | 1167.16 | 1.09% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp8192 | 1 | 1284.48 | 1288.79 | 0.34% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 0 | 26.92 | 26.89 | -0.11% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 1 | 29.65 | 29.37 | -0.94% |
+
+## Bench Results
+
+### Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+
+#### PrismML-Eng_ptq1_0-cuda (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5221.78 ± 21.82 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      5022.22 ± 17.07 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         59.79 ± 0.03 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5105.22 ± 36.01 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4773.44 ± 6.01 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         55.32 ± 1.43 |
+
+build: 82c9c221f (11258)
+```
+
+#### PrismML-Eng_ptq1_0-cuda_base (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5229.68 ± 18.45 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       5030.81 ± 5.53 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         59.82 ± 0.05 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5067.29 ± 94.28 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4762.54 ± 4.01 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         58.51 ± 0.05 |
+
+build: c85b92c69 (11256)
+```
+
+- Bench data comparison: different
+
+### Qwen3.5-0.8B-Q4_K_M.gguf
+
+#### PrismML-Eng_ptq1_0-cuda (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5179.41 ± 19.59 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      4982.93 ± 15.28 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         57.67 ± 0.06 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5058.84 ± 30.86 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4746.88 ± 1.47 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         56.79 ± 0.01 |
+
+build: 82c9c221f (11258)
+```
+
+#### PrismML-Eng_ptq1_0-cuda_base (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5183.24 ± 14.06 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       4985.92 ± 6.29 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         57.66 ± 0.30 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5053.29 ± 25.86 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4734.92 ± 4.29 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         54.31 ± 0.03 |
+
+build: c85b92c69 (11256)
+```
+
+- Bench data comparison: different
+
+### Qwen2-1.5Moe.Q4_K_M.gguf
+
+#### PrismML-Eng_ptq1_0-cuda (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1337.40 ± 2.83 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       1288.79 ± 8.55 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         29.37 ± 0.02 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1323.80 ± 2.75 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1167.16 ± 2.15 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         26.89 ± 0.01 |
+
+build: 82c9c221f (11258)
+```
+
+#### PrismML-Eng_ptq1_0-cuda_base (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1337.75 ± 2.91 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       1284.48 ± 1.87 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         29.65 ± 0.01 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1299.49 ± 3.68 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1154.56 ± 1.30 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         26.92 ± 0.03 |
+
+build: c85b92c69 (11256)
+```
+
+- Bench data comparison: different
+Saved summary to /home/jianyuzh/ws/llama.cpp/auto_ci/29676/summary.md
+
+Workflow completed successfully.
+Command: /home/jianyuzh/miniforge3/bin/python /home/jianyuzh/ws/llama.cpp/auto_ci/sycl_test_pr.py https://github.com/PrismML-Eng/llama.cpp/tree/ptq1_0-cuda /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf,/home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf,/home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
+
+
+Exit code: 0
