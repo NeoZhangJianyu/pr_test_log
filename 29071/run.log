@@ -1,0 +1,560 @@
+Cloning into 'arthw_fix_mul_gpu_mem'...
+Cloning into 'arthw_fix_mul_gpu_mem_base'...
+Note: switching to 'cca7c5f97605aa36b4a88c5bce6b5fcfdd461752'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at cca7c5f97 fix mixed different model GPUs issue
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+/home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem/ggml/src/ggml-sycl/ggml-sycl.cpp:3346: GGML_ASSERT(src1->type == GGML_TYPE_F32 || (src1->ne[2] == 1 && src1->ne[3] == 1)) failed
+⚠️ warning: File "/opt/intel/oneapi/compiler/2026.1/lib/libsycl.so.9.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+⚠️ warning: 56	../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S: No such file or directory
+⚠️ warning: 49	./nptl/cancellation.c: No such file or directory
+⚠️ warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+WARNING: test-backend-ops failed in arthw_fix_mul_gpu_mem (exit code -6); continuing.
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+/home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base/ggml/src/ggml-sycl/ggml-sycl.cpp:3346: GGML_ASSERT(src1->type == GGML_TYPE_F32 || (src1->ne[2] == 1 && src1->ne[3] == 1)) failed
+⚠️ warning: File "/opt/intel/oneapi/compiler/2026.1/lib/libsycl.so.9.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+⚠️ warning: 56	../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S: No such file or directory
+⚠️ warning: 49	./nptl/cancellation.c: No such file or directory
+⚠️ warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+WARNING: test-backend-ops failed in arthw_fix_mul_gpu_mem_base (exit code -6); continuing.
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Build with Macros:
+  GGML_SYCL_DNNL: yes
+  GGML_SYCL_F16: no
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_GRAPH: yes
+  GGML_SYCL_SUPPORT_LEVEL_ZERO_API: yes
+  GGML_SYCL_SUPPORT_VMM: yes
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DEV_DEBUG: 0
+  GGML_SYCL_DEV2DEV_MEMCPY: 0 (SYCL API)
+  GGML_SYCL_GET_MEM_API: 0 (Level Zero API)
+  GGML_SYCL_ENABLE_DNN: 1
+  GGML_SYCL_FA_ONEDNN: 1
+  GGML_SYCL_FA_ONEDNN_MAX_KV: 0
+  GGML_SYCL_ENABLE_MKL_FA: 1
+  GGML_SYCL_MEMTRACE: 0
+  GGML_SYCL_MEMTRACE_STEP: 64
+  GGML_SYCL_ENABLE_FLASH_ATTN: 1
+  GGML_SYCL_ENABLE_GRAPH: 0
+  GGML_SYCL_ENABLE_OPT: 1
+  GGML_SYCL_ENABLE_VMM: 1
+  GGML_SYCL_ENABLE_FUSION: 1
+  GGML_SYCL_ENABLE_ESIMD: 1
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+  GGML_SYCL_USE_ASYNC_MEM_OP: 1
+  GGML_SYCL_USE_LEVEL_ZERO_API: 1
+  GGML_SYCL_USM_SYSTEM: 0
+  GGML_SYCL_ENABLE_HOST_PINNED_MEM: 1
+  GGML_SYCL_HOST_PINNED_MEM_2G: 0
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|                Intel Arc A770 Graphics|  12.55|    512|    1024|   32| 16225M|        1.17.39395+13|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Generated clone commands:
+git clone -b fix_mul_gpu_mem https://github.com/arthw/llama.cpp arthw_fix_mul_gpu_mem
+git clone -b fix_mul_gpu_mem https://github.com/arthw/llama.cpp arthw_fix_mul_gpu_mem_base
+workdir: /home/jianyuzh/ws/llama.cpp/auto_ci/29071
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf
+Resolved GGUF model path: /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071 && git clone -b fix_mul_gpu_mem https://github.com/arthw/llama.cpp arthw_fix_mul_gpu_mem)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071 && git clone -b fix_mul_gpu_mem https://github.com/arthw/llama.cpp arthw_fix_mul_gpu_mem_base)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && git log)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && git show -s '--format=%H	%an' HEAD)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && git log '--format=%H	%an')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && git checkout cca7c5f97605aa36b4a88c5bce6b5fcfdd461752)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem && git log -n 1)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem && bash -lc './examples/sycl/build.sh > /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem/build.log 2>&1')
+Saved build output to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem/build.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && git log -n 1)
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && bash -lc './examples/sycl/build.sh > /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base/build.log 2>&1')
+Saved build output to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base/build.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem && bash -lc 'source /opt/intel/oneapi/setvars.sh --force')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0 --list-ops')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0')
+Saved UT result to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem/ut.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem/bench_1.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem/bench_2.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem/bench_3.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0 --list-ops')
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/test-backend-ops -b SYCL0')
+Saved UT result to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base/ut.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base/bench_1.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base/bench_2.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base && bash -lc 'source /opt/intel/oneapi/setvars.sh --force && ./build/bin/llama-bench -m /home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf -fa 1,0 --device SYCL0 -p 512,8192 -ngl -1')
+Saved benchmark result to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/arthw_fix_mul_gpu_mem_base/bench_3.log
+
+$ (cd /home/jianyuzh/ws/llama.cpp/auto_ci/29071 && clinfo -l)
+
+# Summary
+# SYCL Workflow Summary
+
+## Target Info
+- Primary: `arthw_fix_mul_gpu_mem`
+- Base: `arthw_fix_mul_gpu_mem_base`
+- Base checked out commit: `cca7c5f97605aa36b4a88c5bce6b5fcfdd461752`
+- GGUF files: `Qwen3.5-0.8B-MTP-Q4_K_M.gguf, Qwen3.5-0.8B-Q4_K_M.gguf, Qwen2-1.5Moe.Q4_K_M.gguf`
+- GPU: `Intel(R) Arc(TM) A770 Graphics`
+
+## UT Results
+
+| Target | Passed | UT Cases | Pass Rate |
+| --- | ---: | ---: | ---: |
+| arthw_fix_mul_gpu_mem | N/A | N/A | N/A |
+| arthw_fix_mul_gpu_mem_base | N/A | N/A | N/A |
+
+## Bench Throughput Comparison
+
+| GGUF | Test | fa | Base t/s | Primary t/s | Increase Rate (Primary vs Base) |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 0 | 5029.37 | 5040.43 | 0.22% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp512 | 1 | 5152.70 | 5154.64 | 0.04% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp8192 | 0 | 4716.64 | 4717.30 | 0.01% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | pp8192 | 1 | 4962.34 | 4960.83 | -0.03% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 0 | 52.03 | 56.69 | 8.96% |
+| Qwen3.5-0.8B-MTP-Q4_K_M.gguf | tg128 | 1 | 55.49 | 55.88 | 0.70% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 0 | 5000.85 | 5002.56 | 0.03% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp512 | 1 | 5108.59 | 5115.33 | 0.13% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp8192 | 0 | 4685.11 | 4681.83 | -0.07% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | pp8192 | 1 | 4912.08 | 4902.76 | -0.19% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 0 | 54.79 | 51.76 | -5.53% |
+| Qwen3.5-0.8B-Q4_K_M.gguf | tg128 | 1 | 53.98 | 54.16 | 0.33% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 0 | 1306.64 | 1325.00 | 1.41% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp512 | 1 | 1352.81 | 1339.56 | -0.98% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp8192 | 0 | 1156.44 | 1167.68 | 0.97% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | pp8192 | 1 | 1289.70 | 1290.88 | 0.09% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 0 | 27.45 | 26.96 | -1.79% |
+| Qwen2-1.5Moe.Q4_K_M.gguf | tg128 | 1 | 29.77 | 29.57 | -0.67% |
+
+## Bench Results
+
+### Qwen3.5-0.8B-MTP-Q4_K_M.gguf
+
+#### arthw_fix_mul_gpu_mem (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5154.64 ± 18.19 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      4960.83 ± 18.86 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         55.88 ± 0.06 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5040.43 ± 34.16 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4717.30 ± 4.00 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         56.69 ± 0.04 |
+
+build: 86f5e5260 (11098)
+```
+
+#### arthw_fix_mul_gpu_mem_base (bench_1.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5152.70 ± 19.90 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      4962.34 ± 18.51 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         55.49 ± 1.26 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5029.37 ± 28.10 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4716.64 ± 2.01 |
+| qwen35 0.8B Q4_K - Medium      | 513.78 MiB |   772.85 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         52.03 ± 0.06 |
+
+build: cca7c5f97 (11097)
+```
+
+- Bench data comparison: different
+
+### Qwen3.5-0.8B-Q4_K_M.gguf
+
+#### arthw_fix_mul_gpu_mem (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5115.33 ± 18.38 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      4902.76 ± 17.32 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         54.16 ± 0.56 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5002.56 ± 28.81 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4681.83 ± 4.55 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         51.76 ± 0.06 |
+
+build: 86f5e5260 (11098)
+```
+
+#### arthw_fix_mul_gpu_mem_base (bench_2.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           pp512 |      5108.59 ± 16.75 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |      4912.08 ± 12.74 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         53.98 ± 0.07 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           pp512 |      5000.85 ± 31.80 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       4685.11 ± 1.52 |
+| qwen35 0.8B Q4_K - Medium      | 497.39 MiB |   752.39 M | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         54.79 ± 0.02 |
+
+build: cca7c5f97 (11097)
+```
+
+- Bench data comparison: different
+
+### Qwen2-1.5Moe.Q4_K_M.gguf
+
+#### arthw_fix_mul_gpu_mem (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1339.56 ± 4.56 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       1290.88 ± 2.89 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         29.57 ± 0.14 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1325.00 ± 0.92 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1167.68 ± 1.82 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         26.96 ± 0.01 |
+
+build: 86f5e5260 (11098)
+```
+
+#### arthw_fix_mul_gpu_mem_base (bench_3.log)
+```text
+| model                          |       size |     params | backend    | ngl |  fa | dev          |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --: | ------------ | --------------: | -------------------: |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           pp512 |       1352.81 ± 2.14 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |          pp8192 |       1289.70 ± 2.16 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   1 | SYCL0        |           tg128 |         29.77 ± 0.01 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           pp512 |       1306.64 ± 2.88 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |          pp8192 |       1156.44 ± 1.53 |
+| qwen2moe 57B.A14B Q4_K - Medium |   2.34 GiB |     4.09 B | SYCL       |  -1 |   0 | SYCL0        |           tg128 |         27.45 ± 0.01 |
+
+build: cca7c5f97 (11097)
+```
+
+- Bench data comparison: different
+Saved summary to /home/jianyuzh/ws/llama.cpp/auto_ci/29071/summary.md
+
+Workflow completed successfully.
+Command: /home/jianyuzh/miniforge3/bin/python /home/jianyuzh/ws/llama.cpp/auto_ci/sycl_test_pr.py https://github.com/arthw/llama.cpp/tree/fix_mul_gpu_mem /home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-MTP-Q4_K_M.gguf,/home/jianyuzh/ws/llama.cpp/models/Qwen3.5-0.8B-Q4_K_M.gguf,/home/jianyuzh/ws/llama.cpp/models/Qwen2-1.5Moe.Q4_K_M.gguf
+
+
+Exit code: 0
