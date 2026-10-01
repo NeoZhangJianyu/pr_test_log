@@ -6,6 +6,7 @@ Log Table:
 
 |PR|Created|Build|UT|Bench|Summary|Title|Author|
 |-|-|-|-|-|-|-|-|
+|[29696](https://github.com/ggml-org/llama.cpp/pull/29696)|2026-09-30T05:19:00Z|Pass|Fail (N/A -> N/A)|Fail<br> (Qwen3.5-0.8B-MTP-Q4_K_M.gguf: Max 0.61%, Min -4.26%<br>Qwen3.5-0.8B-Q4_K_M.gguf: Max 0.16%, Min -4.79%<br>Qwen2-1.5Moe.Q4_K_M.gguf: Max 1.27%, Min -8.87%)|[summary.md](29696/summary.md)|sycl: wide stores and 256-thread groups for the q4_K/q5_K weight dequant|@Titaniumtown|
 |[29687](https://github.com/ggml-org/llama.cpp/pull/29687)|2026-09-30T02:26:51Z|Pass|Fail (N/A -> N/A)|Pass<br> (Qwen3.5-0.8B-MTP-Q4_K_M.gguf: Max 2.99%, Min 0.83%<br>Qwen3.5-0.8B-Q4_K_M.gguf: Max 1.99%, Min -1.36%<br>Qwen2-1.5Moe.Q4_K_M.gguf: Max 1.11%, Min -0.01%)|[summary.md](29687/summary.md)|sycl: fuse the delta-net alpha gate (add + unary + mul)|@Titaniumtown|
 |[29676](https://github.com/ggml-org/llama.cpp/pull/29676)|2026-09-29T19:41:47Z|Pass|Fail (N/A -> N/A)|Fail<br> (Qwen3.5-0.8B-MTP-Q4_K_M.gguf: Max 0.75%, Min -5.45%<br>Qwen3.5-0.8B-Q4_K_M.gguf: Max 4.57%, Min -0.07%<br>Qwen2-1.5Moe.Q4_K_M.gguf: Max 1.87%, Min -0.94%)|[summary.md](29676/summary.md)|cuda: add PTQ1_0 support|@bri-prism|
 |[29672](https://github.com/ggml-org/llama.cpp/pull/29672)|2026-09-29T17:18:16Z|Pass|Fail (N/A -> N/A)|Fail<br> (Qwen3.5-0.8B-MTP-Q4_K_M.gguf: Max 2.93%, Min -6.30%<br>Qwen3.5-0.8B-Q4_K_M.gguf: Max 2.84%, Min -3.17%<br>Qwen2-1.5Moe.Q4_K_M.gguf: Max 0.62%, Min -1.86%)|[summary.md](29672/summary.md)|ggml: add PTQ1_0, ternary at group 128|@bri-prism|
